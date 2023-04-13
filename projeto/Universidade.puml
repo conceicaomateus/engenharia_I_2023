@@ -1,0 +1,14 @@
+@startuml Universidade
+actor Aluno as al
+
+package Profissional {
+    actor Professor as p
+    actor Diretor as d
+    actor Coordenador as c
+    actor Faxineiro as f
+    actor "Técnico de informática" as ti
+    actor Atendente as at
+    actor "Recursos Humanos" as rh
+}
+
+@enduml
