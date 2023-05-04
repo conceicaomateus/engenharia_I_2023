@@ -1,0 +1,19 @@
+@startuml Delicias Gourmet
+package Gestão {
+    actor "Gerente de Compras" as gc
+    actor "Supervisor de Estoque" as se
+    actor "Coordenador de Produção" as cp
+}
+
+package Produção {
+    actor "Analista de Qualidade" as aq
+    actor "Vendedor" as v
+}
+
+usecase "Comprar materias e ingredientes" as UC1
+usecase "Negocia os melhores preços para reduzir os custos de produção" as UC2
+
+usecase "Gerenciar o armazenamento dos materiais" as UC3
+usecase "Confere os pedidos" as UC4
+
+@enduml
