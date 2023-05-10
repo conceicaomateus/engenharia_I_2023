@@ -1,19 +1,51 @@
 @startuml Delicias Gourmet
-package Gestão {
-    actor "Gerente de Compras" as gc
-    actor "Supervisor de Estoque" as se
-    actor "Coordenador de Produção" as cp
+left to right direction
+
+actor "Gerente de Compras" as gc
+actor "Supervisor de Estoque" as se
+actor "Coordenador de Produção" as cp
+actor "Analista de Qualidade" as aq
+actor "Vendedor" as v
+
+rectangle "Sistema Delicias Gourmet" {
+    usecase "adquirir materias e ingredientes" as UC1
+    usecase "Negocia os melhores preços para reduzir os custos de produção" as UC2
+
+    usecase "Gerenciar o armazenamento dos materiais" as UC3
+    usecase "Confere os pedidos" as UC5
+    usecase "Verificar que os itens estejam devidamente organizados e estocados" as UC8
+
+    usecase "Garantir entrega doseleção de fornecedores e ingredientes para futuras compras. itens necessários com a quantidade adequada" as UC9
+    usecase "Planejar e otimizar a utilização dos materiais" as UC10
+
+    usecase "Monitora o processo de produção" as UC4
+    usecase "Conduzir inspeções regulares" as UC11
+    usecase "Garantir a qualidade do ingredientes e materiais" as UC12
+ 
+    usecase "Coordena a entrega de produtos" as UC6
+    usecase "Fornece informações sobre a demanda" as UC7
+    usecase "Seleção de fornecedores e ingredientes para futuras compras" as UC13
 }
 
-package Produção {
-    actor "Analista de Qualidade" as aq
-    actor "Vendedor" as v
-}
+gc -- UC1
+gc --> se
+gc -- UC2
 
-usecase "Comprar materias e ingredientes" as UC1
-usecase "Negocia os melhores preços para reduzir os custos de produção" as UC2
+se -- UC3
+se -- UC5
+se -- UC8
 
-usecase "Gerenciar o armazenamento dos materiais" as UC3
-usecase "Confere os pedidos" as UC4
+cp -- UC9
+cp -- UC10
 
+aq -- UC4
+aq -- UC11
+aq -- UC12
+
+v -- UC7
+v -- UC6
+v -- UC13
+
+UC1 .> UC2 : <<include>>
 @enduml
+
